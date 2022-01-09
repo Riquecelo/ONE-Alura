@@ -10,13 +10,27 @@
         pulalinha();
     }
     
-    function calculaImc(peso, altura){
+    function calculaImc(altura, peso){
 
-        var imc = Math.round( peso / (altura * altura))
-        mostra("O IMC calculado é: " + imc)
+        return Math.round( peso / (altura * altura))
+       // var imc = Math.round( peso / (altura * altura))
+        //mostra("O IMC calculado é: " + imc)
 
     }
 
-    calculaImc(52, 1.59)
+    var nome = prompt("Informe seu nome")
+    var alturaInformada = parseFloat(prompt(nome + " Qual é sua altura?"))
+    var pesoInformado = parseFloat(prompt(nome + " Qual é seu peso?")) 
+    var imc = calculaImc(alturaInformada, pesoInformado)
 
+    mostra(nome + " , seu IMC é " + imc)
+
+    if (imc < 18.5) {
+        mostra("Você está abaixo do recomendado");
+    }else if (imc > 35) {
+        mostra("Você está acima do recomendado")
+    }else if (imc >= 18.5 && imc <= 35) {
+        mostra("Seu IMC está excelente!");
+    }
+    
 </script>
