@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+
+<script>
+
+
+var idade = parseInt(prompt("Digite sua idade"));
+
+while( isNaN(idade) ) {
+    /*Outra forma seria fazer isNaN(idade) == true, mas não é necessário testar se true é igual a true, o resultado será true. É por isso que passamos direto para o while isNan(idade) que retorna já verdadeiro ou falso.*/
+    idade = parseInt(prompt("Digite sua idade"));    
+}
+
+alert(idade);
+
+</script>
