@@ -18,14 +18,17 @@ botaoPacente.addEventListener('click', function(e){
     //capturando os elementos do formulário
     var form =document.querySelector('#form-adiciona')
 
+    obtemPacienteDoFormulario(form)
+    console.log(paciente);
+
     //adicionando cada valor do input em uma variável
-    var nome = form.nome.value;
+    /*var nome = form.nome.value;
     var peso = form.peso.value;
     var altura = form.altura.value;
-    var gordura = form.gordura.value;
+    var gordura = form.gordura.value;*/
+    
 
-    //criando elementos html com js
-
+    /*criando elementos html com js*/
     //criando uma linha da tabela
     var pacienteTr = document.createElement('tr');
 
@@ -41,16 +44,28 @@ botaoPacente.addEventListener('click', function(e){
     pesoTd.textContent = peso;
     alturaTd.textContent = altura;
     gorduraTd.textContent = gordura;
+    imctd.textContent = calculaImc(peso,altura);
 
     //adicionando as colunas como elemento filhos de tr
     pacienteTr.appendChild(nomeTd);
     pacienteTr.appendChild(pesoTd);
     pacienteTr.appendChild(alturaTd);
     pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imctd);
 
     //adicionando a nova linha na tabela principal
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);
-
-
 })
+
+function obtemPacienteDoFormulario(form){
+    var paciente={
+         nome: form.nome.value,
+         peso: form.peso.value,
+         altura: form.altura.value,
+         gordura: form.gordura.value,
+         imc: calculaImc(form.peso.value, form.altura.value)
+    }
+    return paciente;
+
+}
