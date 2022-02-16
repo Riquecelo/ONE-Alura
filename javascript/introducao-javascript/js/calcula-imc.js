@@ -46,3 +46,12 @@ function calculaImc(peso, altura){
 
     return imc.toFixed(2);
 }
+
+/*Atividade escuta o click no html */
+
+/*addEventListinner com função nomeada
+titulo.addEventListener('click', aparecida)
+
+function aparecida(){
+    console.log('Olá Mundo!, clicou!')
+} */
