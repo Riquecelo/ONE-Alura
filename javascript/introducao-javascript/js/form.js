@@ -12,6 +12,14 @@ botaoPacente.addEventListener('click', function(e){
     //criando tr e td do paciente
     var pacienteTr = montarTr(paciente)
 
+    var erros = validaPaciente(paciente);
+
+    if(erros.length > 0){
+        var mensagemErro = document.querySelector("#mensagem-erro");
+        mensagemErro.textContent = erros;
+        return;
+    }
+
     //adicionando a nova linha na tabela principal
     var tabela = document.querySelector("#tabela-pacientes");
     tabela.appendChild(pacienteTr);
@@ -34,28 +42,6 @@ function montarTr(paciente){
     var pacienteTr = document.createElement('tr');
     pacienteTr.classList.add("paciente");
 
-    /*como era
-    //criando colunas da tabela
-    var nomeTd = document.createElement('td');
-    var pesoTd = document.createElement('td');
-    var alturaTd = document.createElement('td');
-    var gorduraTd = document.createElement('td');
-    var imctd = document.createElement('td');
-
-    //adicionando os valores capturados no input nas colunas
-    nomeTd.textContent = paciente.nome;
-    pesoTd.textContent = paciente.peso;
-    alturaTd.textContent = paciente.altura;
-    gorduraTd.textContent = paciente.gordura;
-    imctd.textContent = paciente.imc;
-
-    //adicionando as colunas como elemento filhos de tr
-    pacienteTr.appendChild(nomeTd);
-    pacienteTr.appendChild(pesoTd);
-    pacienteTr.appendChild(alturaTd);
-    pacienteTr.appendChild(gorduraTd);
-    pacienteTr.appendChild(imctd);*/
-
     //como ficou
     pacienteTr.appendChild(montaTd(paciente.nome, "info-nome"));
     pacienteTr.appendChild(montaTd(paciente.peso, "info-peso"));
@@ -72,4 +58,18 @@ function montaTd(dado, classe){
     td.classList.add(classe);
 
     return td;
+}
+
+function validaPaciente(paciente){
+
+    var erros = [];
+
+    if(!validaPeso(paciente.peso)){
+        erros.push("Peso inválido");
+    }
+    if(!validaAltura(paciente.altura)){
+        erros.push("Altura é inválida");
+    }
+
+    return erros;
 }
