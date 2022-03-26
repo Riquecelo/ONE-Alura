@@ -86,8 +86,7 @@ footer{
 }
 
 main{
-    width: 940px;
-    margin: 50px auto;
+   
 }
 
 form{
@@ -155,6 +154,12 @@ table td, table th{
     font-size: 2em;
     margin: 0 0 1em ;
 }
+.principal{
+    margin: 3em 0;
+    background: #FEFEFE;
+    width: 940px;
+    margin: 50px auto;
+}
 .principal p{
     margin: 0 0 1em;
 }
@@ -172,14 +177,22 @@ table td, table th{
 
 .mapa {
     padding: 3em 0;
+    background: linear-gradient(#fefefe,#888888);
+}
+
+.mapa-conteudo{
+    width: 940px;
+    margin: 50px auto;
 }
 
 .mapa p {
     margin: 0 0 2em;
     text-align: center;
 }
+
 .beneficios{
     padding: 3em 0;
+    background: #888888;
 }
 .conteudo-beneficios{
     width: 640px;
@@ -192,6 +205,9 @@ table td, table th{
 }
 .itens{
     line-height: 1.5;
+}
+.itens:before{
+    content: "✦";
 }
 .itens:first-child{
     font-weight: bold;
