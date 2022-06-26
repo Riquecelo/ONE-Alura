@@ -1,0 +1,10 @@
+ surgiu uma metodologia bastante famosa e reconhecida pela sigla BEM, de Block Element Modifier - ou seja, "bloco, elemento e modificador", os três pilares que compõem tal metodologia.
+
+Os blocos se referem a pequenos contextos (ou "pedaços") da nossa aplicação, como as classes cabecalho, logo, menu, banner e sobre, eque atualmente estão nomeadas corretamente seguindo essa metodologia. Já a classe menu-lista, por exemplo, é filha de menu, e as classes filhas de blocos são chamadas de elementos. Nesses casos, usamos dois underlines (__) para nomeá-las. Já os modificadores são separados usando um par de traços (--).
+
+Observe:
+
+bloco
+bloco__elemento
+bloco--modificador
+bloco__elemento--modificador
