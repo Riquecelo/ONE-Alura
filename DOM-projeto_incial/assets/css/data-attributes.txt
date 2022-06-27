@@ -1,0 +1,1 @@
+Utilizamos data-attributes no HTML da nossa aplicação para separar responsabilidades entre Javascript e CSS. Para entender mais a fundo essa propriedade,
